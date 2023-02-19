@@ -11,15 +11,7 @@ export class HeroeTarjetaComponent {
 
 
 
-  @Input() heroe: Heroe = {
-    alter_ego: '',
-    characters: '',
-    first_appearance: '',
-    publisher: Publisher.DCComics,
-    superhero: '',
-    alt_img: '',
-    id: ','
-  };
+  @Input() heroe!: Heroe; // se puede poner el ! para decir que siempre va a recibir un valor o se puede poner Heroe | undefined como tipo
 
 
 }
