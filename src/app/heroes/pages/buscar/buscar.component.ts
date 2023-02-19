@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-buscar',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class BuscarComponent {
+export class BuscarComponent implements OnInit {
+
+
+constructor(private activatedRoute: ActivatedRoute){}
+
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(console.log)
+  }
 
 }
