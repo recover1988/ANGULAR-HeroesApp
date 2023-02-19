@@ -1,3 +1,25 @@
-<h1>Heroes APP</h1>
-<hr />
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar>
+      <span>Menú</span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Listado de Héroes</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
