@@ -41,6 +41,19 @@ export class AppRoutingModule { }
 
 ```
 
+### LazyLoad
+
+se carga en el path el loadChildren que es una promesa, que devuelve la ruta esto genera la carga perezosa
+
+```
+//app-routing.module.ts
+
+{
+  path: 'auth',
+  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+},
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
 ## Development server
