@@ -1,5 +1,46 @@
 # HeroesApp
 
+### Creacion de Rutas
+
+```
+//app-routing.module.ts
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
+
+const routes: Routes = [
+  {
+    path: '404',
+    component: ErrorPageComponent
+  },
+  {
+    path: '**',  --> cualquier pagina
+    component: ErrorPageComponent
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes) --> se agregan las routas
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }
+```
+
+### Cargar las paginas
+
+```
+//app.component.html
+
+<router-outlet></router-outlet>
+
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
 ## Development server
