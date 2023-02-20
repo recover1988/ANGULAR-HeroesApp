@@ -26,9 +26,21 @@ body {
   max-width: 450px;
   height: 100%;
 }
+.sized2{
+  margin: 10px;
+  padding: 20px;
+  max-width: 1000px;
+  height: 100%;
+}
 .imagefit {
   width: 75%;
   height: auto;
   margin: 10px;
   align-self: center;
+  border-radius: 5px;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
 }
