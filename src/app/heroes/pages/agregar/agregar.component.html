@@ -1,5 +1,8 @@
 <h1>
-  Nuevo Héroe <small>{{ heroe.superhero }}</small>
+  {{ heroe.id ? "Editar" : "Nuevo" }}
+  Héroe
+
+  <small>{{ heroe.superhero }}</small>
 </h1>
 
 <div class="parent">
@@ -54,11 +57,11 @@
         (click)="guardar()"
       >
         <mat-icon fontIcon="edit"></mat-icon>
-        Guardar
+        {{ heroe.id ? "Actualizar" : "Crear" }}
       </button>
       <span class="spacer"></span>
       <button
-      *ngIf="heroe.id"
+        *ngIf="heroe.id"
         mat-raised-button
         class="childsize"
         color="warn"
