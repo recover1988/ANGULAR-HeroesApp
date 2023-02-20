@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Heroe } from '../../interfaces/heroes.interface';
 
 @Component({
   selector: 'app-confirmar',
@@ -9,7 +10,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ConfirmarComponent {
 
-  constructor(private dialogRef: MatDialogRef<ConfirmarComponent>) { }
+  constructor(
+    private dialogRef: MatDialogRef<ConfirmarComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Heroe,
+  ) { }
 
   borrar() {
     this.dialogRef.close(true);

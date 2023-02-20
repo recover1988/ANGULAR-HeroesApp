@@ -75,14 +75,19 @@ export class AgregarComponent implements OnInit {
   borrar() {
 
 
-    this.dialog.open(ConfirmarComponent, {
+    const dialog = this.dialog.open(ConfirmarComponent, {
       width: '300px',
+      data: this.heroe
+    })
+    dialog.afterClosed().subscribe(resultado => {
+      if (resultado) {
+        this.heroesService.borrarHeroe(this.heroe.id!)
+          .subscribe(resp => {
+            this.router.navigate(['/heroes'])
+          })
+      }
     })
 
-    this.heroesService.borrarHeroe(this.heroe.id!)
-      .subscribe(resp => {
-        this.router.navigate(['/heroes'])
-      })
   };
 
   mostrarSnackbar(mensaje: string) {
