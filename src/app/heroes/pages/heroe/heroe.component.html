@@ -3,4 +3,28 @@
     <mat-spinner></mat-spinner>
   </mat-grid-tile>
 </mat-grid-list>
-<ng-template #divHeroe>{{ heroe.superhero }}</ng-template>
+<ng-template #divHeroe>
+  <div class="flex-layout">
+    <mat-card class="sized2">
+      <div class="flexcol">
+        <mat-card-title>
+          {{ heroe.superhero }}
+        </mat-card-title>
+        <mat-card-subtitle>{{ heroe.alter_ego }}</mat-card-subtitle>
+        <mat-divider></mat-divider>
+        <br />
+        <img class="imagefit" [src]="heroe | imagen" />
+        <mat-card-subtitle> {{ heroe.publisher }}</mat-card-subtitle>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>{{ heroe.first_appearance }}</mat-list-item>
+            <mat-list-item>{{ heroe.characters }}</mat-list-item>
+            <mat-list-item>{{ heroe.publisher }}</mat-list-item>
+            <mat-list-item>{{ heroe.alter_ego }}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</ng-template>
