@@ -33,11 +33,11 @@ body {
   height: 100%;
 }
 .imagefit {
-  width: 75%;
+  width: 100%;
   height: auto;
   margin: 10px;
   align-self: center;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .flexcol {
