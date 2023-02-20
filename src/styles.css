@@ -26,7 +26,7 @@ body {
   max-width: 450px;
   height: 100%;
 }
-.sized2{
+.sized2 {
   margin: 10px;
   padding: 20px;
   max-width: 1000px;
@@ -43,4 +43,32 @@ body {
 .flexcol {
   display: flex;
   flex-direction: column;
+}
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  align-content: space-evenly;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px,50%));
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+}
+
+.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.childsize {
+  width: 100%;
+  height: auto;
+}
+.gap{
+  gap: 20px;
 }
