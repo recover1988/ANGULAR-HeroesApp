@@ -28,7 +28,7 @@ export class AuthService {
     return this.http.get<Auth>(`${this.baseUrl}/usuarios/1`)
       .pipe(
         map(auth => {
-          console.log(auth);
+          this._auth = auth;
           return true;
         })
       );
